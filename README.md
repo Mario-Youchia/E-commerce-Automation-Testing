@@ -1,6 +1,6 @@
 # E-commerce Automation Testing
 
-This project documents a Java automation-testing workflow for a nopCommerce demo website. It combines Selenium WebDriver browser automation, Cucumber BDD feature files, TestNG runners, Page Object classes, Maven dependency management, screenshot capture, and Extent Reports HTML/PDF reporting.
+E-commerce Automation Testing is a Java automation-testing project for nopCommerce demo website. It uses Selenium WebDriver, Cucumber BDD feature files, TestNG runners, Page Object classes, Maven configuration, screenshot capturing and Extent Reports HTML/PDF reporting.
 
 ## Preview
 
@@ -38,7 +38,6 @@ The terminal run summary shows the automation suite executing through Maven/Test
 * Extent Reports HTML/PDF reporting with screenshot attachments
 * Utility helpers for test data, category/product handling, reporting, and completion alerts
 * Implemented e-commerce flows for registration, login, password reset, search, currency switching, category selection, color filtering, tag selection, and shopping-cart behavior
-* Preserved final generated report with HTML, PDF, and screenshot evidence
 
 ## Implemented Feature Coverage
 
@@ -58,15 +57,13 @@ The terminal run summary shows the automation suite executing through Maven/Test
 
 ## Generated Report Evidence
 
-The original archive contained generated reports from multiple test runs. This cleaned version keeps the strongest final successful run instead of storing every historical generated output.
-
 | Evidence | Path |
 |---|---|
 | HTML report | `docs/generated-report/final-success-run/test-output/HTMLReport/E-Commerce_Automation_Testing_Report.html` |
 | PDF report | `docs/generated-report/final-success-run/test-output/PdfReport/E-Commerce_Automation_Testing_Report.pdf` |
 | Attached screenshots | `docs/generated-report/final-success-run/test-output/Screenshots/` |
 
-Final preserved run:
+Final results:
 
 | Measure | Result |
 |---|---:|
@@ -80,9 +77,9 @@ Final preserved run:
 
 ## Technical Overview
 
-The project uses Cucumber feature files to describe user-facing e-commerce scenarios. Java step definitions connect those scenarios to Selenium WebDriver actions. Page Object classes keep page-specific locators and interactions organized, which makes the test flow easier to maintain than placing all selectors directly inside step definitions.
+The project uses Cucumber feature files to describe use cases of e-commerce from a user point of view. Java step definitions link those scenarios with Selenium WebDriver browser actions. Page Object classes allow us to store page-specific locators and interactions. It is easier to maintain the automation flow with Page Object classes than putting all selectors directly inside step definitions.
 
-The main automation target is the demo e-commerce website configured in `Hooks.java`. The test setup initializes Chrome through WebDriverManager, navigates to the target website, prepares page objects, captures screenshots after each Cucumber step, and closes the browser after each scenario.
+The automation target is specified in `Hooks.java` . It initializes Chrome with WebDriverManager, navigates to the demo e-commerce site, prepares page objects, takes screenshots after Cucumber steps, and closes the browser after each scenario.
 
 The TestNG suite runs the configured Cucumber runners. The main `TestRunner` currently uses the `@Smoke9` tag selection, while `FinishTestRunner` handles the finish/reporting utility flow. Extent Reports is configured through `extent.properties` and `spark-config.xml` to generate HTML/PDF reports and screenshots under the configured output folders.
 
