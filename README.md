@@ -119,4 +119,4 @@ GeneratedReports/
 
 ## Limitations
 
-This is a course/personal automation-testing project built around a live demo e-commerce website. If the target website changes its UI, selectors, products, categories, or page behavior, some locators and test steps may need to be updated. Draft wishlist, compare-list, and order feature files from the original archive were not kept as active coverage because they were not backed by the final implemented step-definition set.
+This is a simple automation-testing project built around a demo e-commerce website. If the website changes its UI, content, structure, or page behavior, then tests may need to be updated. Other features such as wishlist, compare-list, and order are not implemented in this version of the project.
